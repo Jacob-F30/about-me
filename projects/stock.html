@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jacob | Data Entry</title> <!-- Change the title per page -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+            },
+            colors: {
+              stats: {
+                bg: '#0f172a',
+                panel: '#1e293b',
+                accent: '#38bdf8',
+                green: '#34d399',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+      body {
+        background-color: #0f172a;
+        color: #f8fafc;
+      }
+      .grid-bg {
+        background-image: linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+    </style>
+  </head>
+  <body class="font-mono bg-stats-bg text-slate-300 antialiased selection:bg-stats-accent selection:text-white">
+    
+    <div class="fixed inset-0 z-[-1] grid-bg opacity-30"></div>
+
+    <!-- Header Section -->
+    <header class="max-w-4xl mx-auto px-4 pt-12 pb-8 flex justify-between items-center" data-aos="fade-down">
+      <!-- Note the ../ to go back a folder since this is inside /interest or /projects -->
+      <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 text-sm border border-slate-700 rounded hover:border-stats-accent hover:text-stats-accent transition-colors bg-stats-panel">
+        <span class="text-stats-accent">&lt;</span> Back_to_Home
+      </a>
+      <div class="text-right">
+        <!-- Change this heading per page -->
+        <h1 class="text-2xl font-bold text-white">Page_Data</h1>
+        <p class="text-xs text-stats-green">Querying local resources...</p>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 pb-24 space-y-12">
+      <!-- Core Content Area -->
+      <section class="bg-stats-panel border border-slate-700 p-8 rounded-lg shadow-xl" data-aos="fade-up">
+        
+        <!-- Replace this with your specific page contents! -->
+        <h2 class="text-xl text-white font-bold mb-4">> INITIALIZING MODULE</h2>
+        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+          System operational. Outputting logs for this specific data structure...
+        </p>
+
+        <div class="w-full bg-slate-800 rounded p-4 border border-slate-700 text-xs">
+          // Add your text, charts, or images here!
+          <br><br>
+          <span class="text-stats-green">[Complete]</span> Fetching records... 
+        </div>
+
+      </section>
+    </main>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        offset: 50,
+      });
+    </script>
+  </body>
+</html>

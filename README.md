@@ -8,4 +8,4 @@ A playful personal website with card-style sections covering:
 
 ## Run locally
 
-Open `/home/runner/work/about-me/about-me/index.html` in any browser.
+Open `index.html` in any browser.

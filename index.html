@@ -72,17 +72,16 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <a href="timeline.html" class="block bg-stats-panel border border-slate-700 p-6 rounded-lg hover:border-stats-accent hover:-translate-y-1 transition-all duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
             <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-bold text-white">What_I_have_done</h3>
+              <h3 class="text-xl font-bold text-white">Life_data</h3>
               <span class="text-xs px-2 py-1 bg-slate-800 rounded text-stats-green">Valid</span>
             </div>
             <p class="text-sm text-slate-400 mb-4">Building practical solutions, learning fast, and improving every year.</p>
             <div class="border-t border-slate-700 pt-4 mt-auto">
-              <div class="flex justify-between text-xs">
-                <span>Versatility</span>
-                <span class="stat-value">+71%</span>
-                <span>Maturity</span>
-                <span class="stat-value">+64%</span>
-                
+              <div class="flex flex-wrap gap-x-4 gap-y-2 justify-between text-xs pt-2">
+                <div class="flex gap-2"><span>Versatility</span> <span class="stat-value">+71%</span></div>
+                <div class="flex gap-2"><span>Maturity</span> <span class="stat-value">+64%</span></div>
+                <div class="flex gap-2"><span>Cooking</span> <span class="stat-value">+138%</span></div>
+                <div class="flex gap-2"><span>Shooting_rifle</span> <span class="stat-value">+82%</span></div>
               </div>
             </div>
           </a>
@@ -90,8 +89,8 @@
           
           <article class="bg-stats-panel border border-slate-700 p-6 rounded-lg hover:border-stats-accent transition-colors duration-300 flex flex-col items-center justify-center text-center" data-aos="fade-up" data-aos-delay="300">
             <h3 class="text-xl font-bold text-white mb-2">Moments_in_my_life</h3>
-            <div class="w-full h-32 border-2 border-dashed border-slate-600 rounded flex items-center justify-center text-slate-500 mb-2">
-              [IMG_NULL_REF]
+            <div class="w-full h-32 border-2 border-slate-600 rounded flex items-center justify-center bg-slate-800 overflow-hidden mb-2">
+              <img id="moments-img" src="imgs/dga_abs.jpg" alt="Moment Photo" class="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all" />
             </div>
             <span class="text-xs text-stats-accent">Render Photo Data</span>
           </article>
@@ -108,28 +107,31 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <a href="interest/gym.html" class="block bg-stats-panel border border-slate-700 p-6 rounded-lg relative overflow-hidden group hover:border-stats-accent transition-colors duration-300 cursor-pointer" data-aos="fade-right" data-aos-delay="100">
             <div class="absolute right-0 top-0 opacity-10 text-9xl leading-none">🏋️</div>
-            <h3 class="text-xl font-bold text-white mb-3">Gymming</h3>
-            <p class="text-sm text-slate-400 mb-4 max-w-sm">How to work out effectively: consistency, progressive overload, and good form.</p>
+            <h3 class="text-xl font-bold text-white mb-3">Workout</h3>
+            <p class="text-sm text-slate-400 mb-4 max-w-sm">Consistency, progressive overload</p>
             
             <div class="space-y-2 mt-6 relative z-10">
               <div class="flex justify-between text-xs">
                 <span>Consistency</span>
-                <span class="stat-value">98.5%</span>
+                <span class="stat-value">90%</span>
               </div>
               <div class="w-full bg-slate-800 rounded-full h-1.5">
-                <div class="bg-stats-green h-1.5 rounded-full" style="width: 98.5%"></div>
+                <div class="bg-stats-green h-1.5 rounded-full" style="width: 90%"></div>
               </div>
-              <div class="flex justify-between text-xs pt-2">
-                <span>Progressive_Overload</span>
-                <span class="stat-value">y = mx + b</span>
+              <div class="flex flex-wrap gap-x-4 gap-y-2 justify-between text-xs pt-2">
+                <div class="flex gap-2"><span>Bench_press</span> <span class="stat-value">85kg</span></div>
+                <div class="flex gap-2"><span>Dead_lift</span> <span class="stat-value">undefined</span></div>
+                <div class="flex gap-2"><span>Squat</span> <span class="stat-value">undefined</span></div>
+                <div class="flex gap-2"><span>Pull_ups_max</span> <span class="stat-value">23</span></div>
+                <div class="flex gap-2"><span>leg_press</span> <span class="stat-value">160kg</span></div>
               </div>
             </div>
           </a>
 
           <a href="interest/cars.html" class="block bg-stats-panel border border-slate-700 p-6 rounded-lg relative overflow-hidden group hover:border-stats-accent transition-colors duration-300 cursor-pointer" data-aos="fade-left" data-aos-delay="200">
             <div class="absolute right-0 top-0 opacity-10 text-9xl leading-none">🚘</div>
-            <h3 class="text-xl font-bold text-white mb-3">Cars</h3>
-            <p class="text-sm text-slate-400 mb-4 max-w-sm">How to maintain cars: regular servicing, tire checks, fluid levels, and clean habits.</p>
+            <h3 class="text-xl font-bold text-white mb-3">BMW 320i F30 2018</h3>
+            <p class="text-sm text-slate-400 mb-4 max-w-sm">Maintenance list for my BMW</p>
             
             <div class="space-y-2 mt-6 relative z-10">
               <div class="flex justify-between text-xs">
@@ -139,10 +141,18 @@
               <div class="w-full bg-slate-800 rounded-full h-1.5">
                 <div class="bg-stats-accent h-1.5 rounded-full" style="width: 100%"></div>
               </div>
-              <div class="flex justify-between text-xs pt-2">
-                <span>Fluids</span>
-                <span class="stat-value">Optimal</span>
+              <div class="flex flex-wrap gap-x-4 gap-y-2 justify-between text-xs pt-2">
+                <div class="flex gap-2"><span>Engine_oil</span> <span class="stat-value">due_98000km</span></div>
+                <div class="flex gap-2"><span>Brake_fluid</span> <span class="stat-value">due_98000km</span></div>
+                <div class="flex gap-2"><span>Brake_rotors</span> <span class="stat-value">due_98000km</span></div>
+                <div class="flex gap-2"><span>Brake_pads</span> <span class="stat-value">due_98000km</span></div>
+                <div class="flex gap-2"><span>Spark_plug</span> <span class="stat-value">85000km</span></div>
+                <div class="flex gap-2"><span>Water_pump</span> <span class="stat-value">85000km</span></div>
+                <div class="flex gap-2"><span>tyres</span> <span class="stat-value">85000km</span></div>
+                <div class="flex gap-2"><span>Transmission_fluid</span> <span class="stat-value">80000km</span></div>
+                <div class="flex gap-2"><span>Differential_fluid</span> <span class="stat-value">80000km</span></div>
               </div>
+            
             </div>
           </a>
         </div>
@@ -157,29 +167,29 @@
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <a href="projects/stock.html" class="block bg-stats-panel border border-slate-700 p-5 rounded-lg hover:-translate-y-1 hover:border-stats-accent transition-all duration-300 cursor-pointer" data-aos="zoom-in" data-aos-delay="100">
-            <h3 class="text-lg font-bold text-white mb-2">ML Stock Indicator</h3>
+            <h3 class="text-lg font-bold text-white mb-2">ML_Stock_Indicator</h3>
             <p class="text-xs text-slate-400 mb-4">Exploring predictive signals and model-driven market insights.</p>
             <div class="text-xs mt-auto space-y-1 p-2 bg-slate-800 rounded relative z-10">
-              <div class="flex justify-between text-stats-green"><span>Accuracy:</span> <span>~68%</span></div>
-              <div class="flex justify-between text-slate-400"><span>Loss:</span> <span>0.034</span></div>
+              <div class="flex justify-between text-stats-green"><span>Profit:</span> <span>~72%</span></div>
+              <div class="flex justify-between text-slate-400"><span>Num_of_Models:</span> <span>3</span></div>
             </div>
           </a>
 
           <a href="projects/whiskey.html" class="block bg-stats-panel border border-slate-700 p-5 rounded-lg hover:-translate-y-1 hover:border-stats-accent transition-all duration-300 cursor-pointer" data-aos="zoom-in" data-aos-delay="200">
-            <h3 class="text-lg font-bold text-white mb-2">Whiskey Big Data</h3>
-            <p class="text-xs text-slate-400 mb-4">Analyzing whiskey-related datasets for trends, patterns, and recommendations.</p>
+            <h3 class="text-lg font-bold text-white mb-2">Whiskey_Big_Data</h3>
+            <p class="text-xs text-slate-400 mb-4">Sharing my thoughts on whiskeys I had.</p>
             <div class="text-xs mt-auto space-y-1 p-2 bg-slate-800 rounded relative z-10">
-              <div class="flex justify-between text-stats-green"><span>Rows:</span> <span>1.2M</span></div>
+              <div class="flex justify-between text-stats-green"><span>Rows:</span> <span>12</span></div>
               <div class="flex justify-between text-slate-400"><span>Clusters:</span> <span>K=5</span></div>
             </div>
           </a>
 
           <a href="projects/carpicker.html" class="block bg-stats-panel border border-slate-700 p-5 rounded-lg hover:-translate-y-1 hover:border-stats-accent transition-all duration-300 cursor-pointer" data-aos="zoom-in" data-aos-delay="300">
-            <h3 class="text-lg font-bold text-white mb-2">Car Picker</h3>
+            <h3 class="text-lg font-bold text-white mb-2">Car_Picker</h3>
             <p class="text-xs text-slate-400 mb-4">A practical selector to match driving needs with the right car profile.</p>
             <div class="text-xs mt-auto space-y-1 p-2 bg-slate-800 rounded relative z-10">
               <div class="flex justify-between text-stats-green"><span>Algorithm:</span> <span>Decision Tree</span></div>
-              <div class="flex justify-between text-slate-400"><span>Params:</span> <span>15+</span></div>
+              <div class="flex justify-between text-slate-400"><span>Parametres:</span> <span>21</span></div>
             </div>
           </a>
 
@@ -205,6 +215,56 @@
         once: true,
         offset: 50,
       });
+
+      // Flashing Moments photos
+      const momentPhotos = [
+        "imgs/2015.jpg",
+        "imgs/2016.jpg",
+        "imgs/aged_care.png",
+        "imgs/chef.png",
+        "imgs/chef_retired_2.png",
+        "imgs/confidential.png",
+        "imgs/cordis.png",
+        "imgs/dga_abs.jpg",
+        "imgs/science_ambassador.PNG",
+        "imgs/skycity.jpg",
+        "imgs/trading.png",
+        "imgs/uoa.png"
+      ];
+      const momentsImg = document.getElementById("moments-img");
+      if (momentsImg) {
+        let shuffledPhotos = [];
+        let photoIndex = 0;
+
+        function shuffleArray(array) {
+          let currentIndex = array.length, randomIndex;
+          while (currentIndex !== 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+          }
+          return array;
+        }
+
+        function getNextPhoto() {
+          if (shuffledPhotos.length === 0 || photoIndex >= shuffledPhotos.length) {
+            shuffledPhotos = shuffleArray([...momentPhotos]);
+            photoIndex = 0;
+          }
+          return shuffledPhotos[photoIndex++];
+        }
+
+        momentsImg.style.transition = "opacity 0.4s ease-in-out";
+        setInterval(() => {
+          momentsImg.style.opacity = 0; // Fade out
+          
+          setTimeout(() => {
+            momentsImg.src = getNextPhoto();
+            momentsImg.style.opacity = 1; // Fade in
+          }, 400); // Wait for the fade out to complete
+          
+        }, 2000); // Transition to a new photo every 2 seconds
+      }
     </script>
   </body>
 </html>

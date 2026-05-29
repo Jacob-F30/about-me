@@ -62,8 +62,33 @@
 
     <main class="max-w-6xl mx-auto px-4 pb-24 space-y-32">
       
-      <!-- Timeline Section -->
+      <!-- Fun Facts Section -->
       <section>
+        <div class="flex items-center gap-4 mb-8" data-aos="fade-right">
+          <h2 class="text-2xl md:text-3xl font-bold text-white">00. Fun_Facts</h2>
+          <div class="h-[1px] flex-grow bg-slate-700"></div>
+        </div>
+        
+        <div class="bg-stats-panel border border-slate-700 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between shadow-[0_0_15px_rgba(56,189,248,0.1)] relative overflow-hidden group hover:border-stats-accent transition-colors duration-300" data-aos="zoom-in" data-aos-delay="50">
+          <!-- Background decoration -->
+          <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-5 text-9xl leading-none pointer-events-none group-hover:opacity-10 transition-opacity">💡</div>
+          
+          <div class="flex-grow z-10 w-full mb-4 md:mb-0">
+            <h3 class="text-xs text-stats-green uppercase tracking-wider mb-2 font-bold">> fetch_random_fact.sh</h3>
+            <p id="fun-fact-text" class="text-lg md:text-xl text-slate-300 font-mono min-h-[3rem] flex items-center transition-opacity duration-200 whitespace-pre-line">
+              Querying database for fun facts...
+            </p>
+          </div>
+          
+          <button id="next-fact-btn" class="z-10 px-4 py-2 border border-slate-600 rounded text-slate-300 hover:text-stats-accent hover:border-stats-accent transition-colors text-sm shrink-0 flex items-center justify-center gap-2 bg-slate-800 w-full md:w-auto md:ml-4 cursor-pointer">
+            <span>Next_Fact()</span>
+            <span class="text-stats-green">></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Timeline Section -->
+      <section class="!mt-16 md:!mt-20">
         <div class="flex items-center gap-4 mb-8" data-aos="fade-right">
           <h2 class="text-2xl md:text-3xl font-bold text-white">01. Timeline_Data</h2>
           <div class="h-[1px] flex-grow bg-slate-700"></div>
@@ -256,6 +281,55 @@
         once: true,
         offset: 50,
       });
+
+      // --- Fun Facts Logic ---
+      const factEl = document.getElementById('fun-fact-text');
+      const nextFactBtn = document.getElementById('next-fact-btn');
+      let funFacts = [];
+
+      async function loadFunFacts() {
+        try {
+          const response = await fetch('fun-facts.json', { cache: 'no-cache' });
+          if (!response.ok) {
+            throw new Error(`Failed to load fun facts (${response.status})`);
+          }
+          const data = await response.json();
+          if (!Array.isArray(data)) {
+            throw new Error('Fun facts JSON is not an array');
+          }
+          funFacts = data.filter((item) => typeof item === 'string' && item.trim().length > 0);
+          if (funFacts.length === 0) {
+            throw new Error('Fun facts JSON is empty');
+          }
+        } catch (error) {
+          funFacts = [
+            'Fun facts are warming up. Try again in a moment.'
+          ];
+        }
+        displayRandomFact();
+      }
+      
+      function displayRandomFact() {
+        if (!factEl || funFacts.length === 0) return;
+        const randomIndex = Math.floor(Math.random() * funFacts.length);
+        
+        // Quick fade out/in effect
+        factEl.style.opacity = 0;
+        setTimeout(() => {
+          factEl.textContent = funFacts[randomIndex];
+          factEl.style.opacity = 1;
+        }, 200);
+      }
+      
+      loadFunFacts();
+      
+      // Cycle a new fact when the button is clicked
+      if (nextFactBtn) {
+        nextFactBtn.addEventListener('click', displayRandomFact);
+      }
+      
+      // Auto-rotate the fact every 8 seconds
+      setInterval(displayRandomFact, 8000);
 
       // Flashing Moments photos
       const momentPhotos = [
